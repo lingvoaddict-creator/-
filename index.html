@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Английский для детей и подростков</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 30%, #fbc2eb 60%, #a18cd1 100%);
+      --accent: #ffcc00;
+      --accent-dark: #ff9900;
+      --text-main: #222244;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --pill-bg: rgba(255, 255, 255, 0.75);
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.16);
+      --radius-xl: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 16px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: radial-gradient(circle at 30% 20%, #fff7c2, #ffb3c6);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .brand-title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-title span:first-child {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-title span:last-child {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 0.84rem;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: var(--text-main);
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 38px;
+    }
+
+    .hero-text {
+      background: var(--card-bg);
+      border-radius: 30px;
+      padding: 26px 26px 24px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 204, 0, 0.16);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag span.emoji {
+      font-size: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.13;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span.highlight {
+      background: linear-gradient(120deg, #ff7eb3, #ffcc00, #8ec5fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges span {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(142, 197, 252, 0.32);
+      border: 1px dashed rgba(120, 150, 240, 0.7);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .btn-main,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 11px 20px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn-main {
+      background: radial-gradient(circle at 30% 0, #fff6b0, #ffcc00);
+      box-shadow: 0 13px 30px rgba(255, 170, 0, 0.55);
+      color: #5a3200;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(255, 170, 0, 0.7);
+      background: radial-gradient(circle at 30% 0, #fff9d0, #ffdd55);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      background: #ffffff;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 6px;
+    }
+
+    .hero-deco-circle {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.95), rgba(255, 121, 198, 0.6));
+      opacity: 0.35;
+      top: -60px;
+      right: -60px;
+      pointer-events: none;
+    }
+
+    .hero-deco-doodle {
+      position: absolute;
+      bottom: 12px;
+      right: 18px;
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 360px;
+      background: radial-gradient(circle at top left, #ffffff, #f8f0ff);
+      border-radius: 34px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .teacher-chip {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .teacher-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin: 32px auto 12px;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+    }
+
+    .teacher-name {
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+
+    .teacher-role {
+      text-align: center;
+      font-size: 0.86rem;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .teacher-labels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .teacher-labels span {
+      font-size: 0.78rem;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(255, 204, 0, 0.17);
+      border: 1px solid rgba(255, 195, 0, 0.7);
+    }
+
+    .hero-levels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      margin-top: 12px;
+      border-top: 1px dashed rgba(150, 150, 200, 0.4);
+      padding-top: 8px;
+    }
+
+    .hero-levels div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sticker {
+      position: absolute;
+      right: -14px;
+      bottom: 18px;
+      background: #ffcc00;
+      color: #5a3200;
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      transform: rotate(12deg);
+      border-radius: 999px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span.icon {
+      font-size: 1.4rem;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 20px 20px 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .about-text p {
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    .about-list li span.bullet {
+      font-size: 1.1rem;
+      margin-top: -2px;
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.86rem;
+    }
+
+    .fact-item {
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 12px;
+      border: 1px dashed rgba(180, 150, 255, 0.6);
+    }
+
+    .fact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+      margin-bottom: 2px;
+    }
+
+    .fact-value {
+      font-weight: 800;
+      font-size: 0.98rem;
+    }
+
+    /* PROGRAMS */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .program-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 24px;
+      padding: 14px 13px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .program-age {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+    }
+
+    .program-title {
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .program-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 2px 0 4px;
+    }
+
+    .program-tags span {
+      font-size: 0.76rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(255, 204, 0, 0.18);
+    }
+
+    .program-list {
+      list-style: none;
+      font-size: 0.86rem;
+    }
+
+    .program-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+
+    .program-list li span.dot {
+      font-size: 1rem;
+      margin-top: -3px;
+    }
+
+    .program-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px dashed rgba(150, 150, 200, 0.4);
+    }
+
+    .program-footer span.level {
+      font-weight: 700;
+    }
+
+    /* METHOD */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .pill-row span {
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(142, 197, 252, 0.35);
+      border: 1px solid rgba(142, 197, 252, 0.9);
+      font-weight: 600;
+    }
+
+    .method-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .method-list li {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 9px 11px;
+      display: flex;
+      gap: 7px;
+    }
+
+    .method-list li span.icon-mini {
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    /* SCHEDULE */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 2.1fr 1.3fr;
+      gap: 16px;
+    }
+
+    table.schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .schedule-table thead {
+      background: linear-gradient(120deg, #ffcc00, #ff9a9e);
+      color: #5a3200;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 8px 11px;
+      text-align: left;
+    }
+
+    .schedule-table tbody tr:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background: rgba(255, 248, 230, 0.9);
+    }
+
+    .schedule-table tbody tr:hover {
+      background: rgba(255, 238, 200, 0.9);
+    }
+
+    .schedule-note {
+      font-size: 0.8rem;
+      opacity: 0.75;
+      margin-top: 6px;
+    }
+
+    .price-box {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      padding: 12px 13px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+      font-size: 0.9rem;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .price-row span:first-child {
+      opacity: 0.8;
+    }
+
+    .price-row span.amount {
+      font-weight: 800;
+    }
+
+    .price-box small {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.76rem;
+      opacity: 0.75;
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      padding: 10px 12px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-name {
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .review-badge {
+      font-size: 0.72rem;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .review-text {
+      opacity: 0.9;
+    }
+
+    .review-stars {
+      font-size: 0.8rem;
+      margin-top: 6px;
+    }
+
+    .review-quote {
+      position: absolute;
+      font-size: 2.6rem;
+      right: 8px;
+      top: -10px;
+      opacity: 0.08;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 16px;
+    }
+
+    .contact-info {
+      font-size: 0.92rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li span.icon-mini {
+      font-size: 1.1rem;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 14px 14px 12px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+    }
+
+    .contact-form-row {
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-form label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      border-radius: 16px;
+      border: 1px solid rgba(150, 150, 200, 0.6);
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-form textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #ff9900;
+      box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.25);
+    }
+
+    .contact-form .btn-main {
+      width: 100%;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(34, 34, 68, 0.8);
+    }
+
+    footer a {
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(34, 34, 68, 0.4);
+    }
+
+    footer a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      header {
+        border-radius: 20px;
+        align-items: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .schedule-grid,
+      .two-col,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .about-facts,
+      .method-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .reviews-grid,
+      .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding: 14px 10px 40px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero-text {
+        padding: 18px 16px 16px;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .programs-grid,
+      .reviews-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="logo-wrap">
+        <div class="logo-circle">ABC</div>
+        <div class="brand-title">
+          <span>Happy English</span>
+          <span>для детей и подростков</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#programs">Программы</a>
+        <a href="#method">Как мы учимся</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#contact">Записаться</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <div class="hero-deco-circle"></div>
+        <div class="hero-deco-doodle">✨ 🎈</div>
+        <div class="hero-tag">
+          <span class="emoji">🎧</span>
+          <span>Разговорный английский в мини‑группах</span>
+        </div>
+        <h1>
+          Яркие уроки английского
+          <span class="highlight">для детей и подростков</span>
+        </h1>
+        <p class="hero-subtitle">
+          Играем, говорим, слушаем и поём на английском 
+        </p>
+        <div class="hero-badges">
+          <span>👧 7–9 лет • начальное звено - игровой формат, привыкаем к языку, формируем стойкую мотивацию </span>
+          <span>🧑 10–13 лет • среднее звено - закладываем прочную основу </span>
+          <span>🧑 14-17 лет • старшее звено - смотрим фильмы, читаем книги, устраиваем дискуссии на английском </span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-main">Записаться на пробный урок <span>🚀</span></a>
+          <a href="#programs" class="btn-ghost">Посмотреть программы</a>
+        </div>
+        <p class="hero-note">Первое занятие — знакомство и диагностика уровня, без стресса и тестов.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="teacher-chip">👩‍🏫 Ваш учитель — <strong>Татьяна</strong></div>
+          <div class="teacher-avatar">😊</div>
+          <p class="teacher-name">Татьяна, преподаватель английского</p>
+          <p class="teacher-role">группы для детей и подростков</p>
+          <div class="teacher-labels">
+            <span>20+ лет опыта</span>
+            <span>Языковая практика в Великобритании, Австралии</span>
+            <span>Подтвержденный Cambridge University уровень С2</span>
+          </div>
+          <div class="hero-levels">
+            <div><span>🎯</span> от A0 до B2</div>
+            <div><span>👥</span> 4–8 человек в группе</div>
+          </div>
+          <div class="sticker">Пробный урок 0 $</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title"><span class="icon">👩‍🏫</span>Обо мне и моих уроках</h2>
+      <div class="section-card two-col">
+        <div class="about-text">
+          <p>
+            Помогаю детям и подросткам подружиться с английским: не бояться говорить, понимать любимые мультфильмы
+            и игры, начать общаться на английском.
+          </p>
+          <p>
+            На моих уроках много движения, игр, улыбок — и при этом чёткая структура, чтобы родители видели результат.
+          </p>
+          <ul class="about-list">
+            <li><span class="bullet">⭐</span><span>объясняю простым языком, делаю сложную грамматику простой;</span></li>
+            <li><span class="bullet">🎲</span><span>использую настольные и онлайн‑игры, карточки, квесты;</span></li>
+            <li><span class="bullet">🎧</span><span>много слушаем живую речь — мультфильмы, песни, диалоги;</span></li>
+            <li><span class="bullet">💬</span><span>говорим на каждом уроке </span></li>
+          </ul>
+        </div>
+        <div class="about-facts">
+          <div class="fact-item">
+            <div class="fact-label">Опыт</div>
+            <div class="fact-value">20+ лет преподавания в группах с детьми и подростками</div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-label">Формат</div>
+            <div class="fact-value">группы 4–8 человек</div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-label">Результат</div>
+            <div class="fact-value">уверенная речь и любовь к языку</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <h2 class="section-title"><span class="icon">📚</span>Программы для разных возрастов</h2>
+      <div class="section-card">
+        <div class="programs-grid">
+          <div class="program-card">
+            <div class="program-age">7–9 лет</div>
+            <div class="program-title">Начальное звено</div>
+            <div class="program-tags">
+              <span>игры</span><span>песенки</span><span>картинки</span>
+            </div>
+            <ul class="program-list">
+              <li><span class="dot">•</span><span>первый словарный запас: семья, цвета, игрушки, еда;</span></li>
+			  <li><span class="dot">•</span><span> вводный курс обучения чтению;</span></li>
+              <li><span class="dot">•</span><span>игровые задания, развивающие внимание и память.</span></li>
+            </ul>
+            <div class="program-footer">
+              <span class="level">Уровень: с нуля</span>
+              <span>2× в неделю по 45-60 мин</span>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <div class="program-age">10–13 лет</div>
+            <div class="program-title">Среднее звено</div>
+            <div class="program-tags">
+              <span>проекты</span><span>игры</span><span>комиксы</span>
+            </div>
+            <ul class="program-list">
+              <li><span class="dot">•</span><span>учимся рассказывать о себе, школе, хобби;</span></li>
+              <li><span class="dot">•</span><span>изучаем ключевые грамматические темы;</span></li>
+              <li><span class="dot">•</span><span>готовим базу для школьных олимпиад.</span></li>
+            </ul>
+            <div class="program-footer">
+              <span class="level">Уровень: A0–A2</span>
+              <span>2× в неделю по 60 мин</span>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <div class="program-age">14–17 лет</div>
+            <div class="program-title">Старшее звено</div>
+            <div class="program-tags">
+              <span>дискуссии</span><span>игры</span><span>просмотр фильмов</span><span>чтение книг в оригинале</span>
+            </div>
+            <ul class="program-list">
+              <li><span class="dot">•</span><span>говорим о жизни, музыке, учебе;</span></li>
+              <li><span class="dot">•</span><span>смотрим видео с разбором;</span></li>
+              <li><span class="dot">•</span><span>готовимся к экзаменам и реальным жизненным ситуациям в поездках.</span></li>
+            </ul>
+            <div class="program-footer">
+              <span class="level">Уровень: A2–B2</span>
+              <span>2× в неделю по 60/75 мин</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <h2 class="section-title"><span class="icon">🎮</span>Как проходят занятия</h2>
+      <div class="section-card">
+        <div class="pill-row">
+          <span>80% урока — живой английский</span>
+          <span>игры и вовлекающие активности</span>
+          <span>поддерживающая атмосфера</span>
+          <span>понятные цели для ребёнка</span>
+        </div>
+        <ul class="method-list">
+          <li><span class="icon-mini">🎲</span><span>Каждую тему закрепляем через игры и соответствующие возрасту активности.</span></li>
+          <li><span class="icon-mini">🎧</span><span>Слушаем живую речь: диалоги, песни, мультфильмы, видеоблоги, интервью. </span></li>
+          <li><span class="icon-mini">🧩</span><span>Материал выдается небольшими блоками, с постоянной рециркуляцией и закреплением, чтобы ребенок чувствовал прогресс..</span></li>
+        
+        </ul>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2 class="section-title"><span class="icon">🕒</span>Расписание и стоимость</h2>
+      <div class="section-card schedule-grid">
+        <div>
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Группа</th>
+                <th>Дни</th>
+                <th>Время</th>
+				<th>Наличие своб. мест</th>
+				
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Начальное звено (1 класс)</td>
+                <td>Вт, Чт</td>
+                <td>13:00–13:45</td>
+				<td>-</td>
+              </tr> 
+              <tr>
+                <td>Начальное звено (1 год обучения)</td>
+                <td>Пн, Ср</td>
+                <td>9:00–10:00</td>
+				<td>4</td>
+              </tr>
+              <tr>
+			    <td>Начальное звено (2 год обучения)</td>
+                <td>Пн, Ср</td>
+                <td>11:00–12:00</td>
+				<td>2</td>
+			  </tr>
+              <tr>
+                <td>Начальное звено (1 год обучения)</td>
+                <td>Пн, Ср</td>
+                <td>15:00–16:00</td>
+				<td>-</td>
+			  </tr>
+              <tr>
+			   <td>Начальное звено (1 год обучения)</td>
+                <td>Пн, Ср</td>
+                <td>14:00–15:00</td>
+				<td>2</td>
+			  </tr>
+              <tr>
+			    <td>Начальное звено (1 год обучения)</td>
+                <td>Вт, Чт</td>
+                <td>11:00–12:00</td>
+				<td>3</td>
+			  </tr>
+              <tr>
+			    <td>Среднее звено (4 кл)</td>
+                <td>Вт, Чт</td>
+                <td>14:50 - 15:50</td>
+				<td>1</td>
+			  </tr>
+              <tr>
+			    <td>Среднее звено (4 кл)</td>
+                <td>Пн, Ср</td>
+                <td>15:00–16:00</td>
+				<td>1</td>
+			  </tr>
+              <tr>
+				<td>Среднее звено (5-6 кл)</td>
+                <td>Пн, Ср</td>
+                <td>17:00–18:00</td>
+				<td>1</td>
+			  </tr>
+              <tr>
+			    <td>Среднее звено (6-7 кл)</td>
+                <td>Пн, Ср</td>
+                <td>10:00–11:00</td>
+				<td>1</td>
+			  </tr>
+              <tr>
+			    <td>Старшее звено (уровень А2+)</td>
+                <td>Вт, Чт</td>
+                <td>17:00-18:00</td>
+				<td>-</td>
+			  </tr>
+              <tr>
+			    <td>Старшее звено (уровень В1)</td>
+                <td>Пн, Ср</td>
+                <td>16:00-17:00</td>
+				<td>5</td>
+			  </tr>
+              <tr>
+				<td>Старшее звено (уровень В1+)</td>
+                <td>Вт, Чт</td>
+                <td>18:10-19:25</td>
+				<td>2</td>
+			 
+              </tr>
+            </tbody>
+          </table>
+          <p class="schedule-note">* Группа подбирается индивидуально, в зависимости от возраста и уровня языка.</p>
+        </div>
+        <div class="price-box">
+          <div class="price-row">
+            <span>Пробный урок</span>
+            <span class="amount">бесплатно</span>
+          </div>
+          <div class="price-row">
+            <span>Абонемент на 8 занятий(в зависисости от продолжительности занятия (45-75 мин)</span>
+            <span class="amount">3200-4000</span>
+          </div>
+
+          <small>Точные цены и свободные места уточняйте при записи — просто напишите мне удобным способом ниже.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2 class="section-title"><span class="icon">💬</span>Отзывы родителей</h2>
+      <div class="section-card reviews-grid">
+        <div class="review-card">
+          <div class="review-quote">“</div>
+          <div class="review-name">Марина, мама Кати (9 лет)</div>
+          <div class="review-badge">группа English Playtime</div>
+          <p class="review-text">Катя каждый раз ждёт урок и просит включить её любимые игры даже в выходные. Стала сама считать до 20 и называть цвета на английском.</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote">“</div>
+          <div class="review-name">Алексей, папа Ильи (12 лет)</div>
+          <div class="review-badge">группа Smart Kids</div>
+          <p class="review-text">Раньше английский был «самым скучным предметом». Сейчас Илья смотрит блогеров с субтитрами.</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote">“</div>
+          <div class="review-name">Ольга, мама Даши (14 лет)</div>
+          <div class="review-badge">группа Teen Talk</div>
+          <p class="review-text">Даша перестала бояться говорить. Начали подтягиваться школьные оценки, и учительница отметила прогресс в устной речи.</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title"><span class="icon">📩</span>Записаться на пробный урок</h2>
+      <div class="section-card contact-grid">
+        <div class="contact-info">
+          <p>Напишите мне удобным для вас способом — я отвечу в течение дня и предложу варианты групп для вашего ребёнка.</p>
+          <ul class="contact-list">
+           <li><span class="icon-mini">📱</span><span>Telegram / WhatsApp: <strong>8-913-908-22-81</strong></span></li>
+           
+          <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.85;">В сообщении, пожалуйста, укажите возраст ребёнка, примерный уровень английского (если учился раньше) и удобное время для занятий.</p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/myzqbnwr" method="POST">
+  <div class="contact-form-row">
+    <label for="name">Имя родителя</label>
+    <input type="text" id="name" name="name" placeholder="Например, Мария" required>
+  </div>
+
+  <div class="contact-form-row">
+    <label for="child">Имя и возраст ребёнка</label>
+    <input type="text" id="child" name="child" placeholder="Например, Саша, 10 лет" required>
+  </div>
+
+  <div class="contact-form-row">
+    <label for="contact">Как с вами связаться</label>
+    <input type="text" id="contact" name="contact" placeholder="Телефон, Telegram или e-mail" required>
+  </div>
+
+  <div class="contact-form-row">
+    <label for="message">Комментарий</label>
+    <textarea id="message" name="message" placeholder="Уровень, пожелания по времени, формат…"></textarea>
+  </div>
+
+  <button type="submit" class="btn-main">Отправить заявку на пробный урок</button>
+</form>
+
+
+    <footer>
+      © <span id="year"></span> Happy English • Татьяна — английский для детей и подростков.
+    </footer>
+  </div>
+
+ 
+  </script>
+  <section class="social-links" style="text-align:center; padding:40px 20px; background:#fff;">
+<h2 style="font-size:2rem; margin-bottom:20px; color:#333;">Я в соцсетях</h2>
+<a href="https://vk.com/lingvoaddict" target="_blank" style="display:inline-block; margin:10px; padding:12px 24px; background:#4a76a8; color:#fff; border-radius:10px; text-decoration:none; font-weight:bold;">VK</a>
+<a href="YOUR_TELEGRAM_LINK" target="_blank" style="display:inline-block; margin:10px; padding:12px 24px; background:#28a8e0; color:#fff; border-radius:10px; text-decoration:none; font-weight:bold;">Telegram</a>
+</section>
+</body>
+</html>
